@@ -1,0 +1,20 @@
+/* Minimal reset — the component styles itself inline, this just clears
+   browser default margins and ensures the app fills the viewport. */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html,
+body,
+#root {
+  width: 100%;
+  min-height: 100%;
+  background: #07111e;
+}
+
+body {
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
