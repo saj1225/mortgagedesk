@@ -104,7 +104,7 @@ function Toggle({ options, value, onChange }) {
         <button key={o.value} onClick={() => onChange(o.value)}
           style={{ flex: 1, padding: "7px 10px", borderRadius: 4, border: "none", cursor: "pointer",
             fontSize: 12, fontWeight: 600, transition: "all 0.2s",
-            background: value === o.value ? "#1a7aff" : "transparent",
+            background: value === o.value ? "#1a8853" : "transparent",
             color: value === o.value ? "#fff" : "#5a7a9a", letterSpacing: "0.03em", whiteSpace: "nowrap" }}>
           {o.label}
         </button>
@@ -125,13 +125,13 @@ function StatCard({ label, value, sub, accent }) {
 
 function SectionHead({ children }) {
   return (
-    <div style={{ fontSize: 10, letterSpacing: "0.14em", textTransform: "uppercase", color: "#3a7adf", fontWeight: 700, marginBottom: 14, paddingBottom: 8, borderBottom: "1px solid #1e3048" }}>
+    <div style={{ fontSize: 10, letterSpacing: "0.14em", textTransform: "uppercase", color: "#3aa873", fontWeight: 700, marginBottom: 14, paddingBottom: 8, borderBottom: "1px solid #1e3048" }}>
       {children}
     </div>
   );
 }
 
-function InfoBox({ children, color = "#1a7aff" }) {
+function InfoBox({ children, color = "#1a8853" }) {
   return (
     <div style={{ background: color + "11", border: `1px solid ${color}33`, borderRadius: 6, padding: "10px 13px", marginBottom: 14, fontSize: 11, color: "#8a9bb0", lineHeight: 1.6 }}>
       {children}
@@ -319,7 +319,7 @@ export default function MortgageCalc() {
   const tabBtnStyle = (t) => ({
     padding: "8px 16px", border: "none", cursor: "pointer", fontSize: 11, fontWeight: 700,
     letterSpacing: "0.06em", textTransform: "uppercase", borderRadius: 5, transition: "all 0.2s",
-    background: tab === t ? "#1a7aff" : "transparent", color: tab === t ? "#fff" : "#5a7a9a",
+    background: tab === t ? "#1a8853" : "transparent", color: tab === t ? "#fff" : "#5a7a9a",
     whiteSpace: "nowrap",
   });
 
@@ -337,7 +337,7 @@ export default function MortgageCalc() {
       <style>{`
         @import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@300;400;500;600;700&display=swap');
         * { box-sizing: border-box; }
-        input:focus, select:focus { border-color: #1a7aff !important; box-shadow: 0 0 0 3px #1a7aff18; }
+        input:focus, select:focus { border-color: #1a8853 !important; box-shadow: 0 0 0 3px #1a885318; }
         input[type=number]::-webkit-inner-spin-button { opacity: 0.25; }
         input::placeholder { color: #2e4a64; }
         ::-webkit-scrollbar { width: 4px; height: 4px; }
@@ -353,7 +353,7 @@ export default function MortgageCalc() {
       {/* ── HEADER ── */}
       <div style={{ background: "linear-gradient(135deg,#0d1a2b 0%,#071422 100%)", borderBottom: "1px solid #1e3048", padding: isMobile ? "16px 18px" : "18px 28px", display: "flex", alignItems: isMobile ? "flex-start" : "center", justifyContent: "space-between", gap: 18, flexWrap: "wrap" }}>
         <div>
-          <div style={{ fontSize: 10, letterSpacing: "0.2em", color: "#1a7aff", textTransform: "uppercase", fontWeight: 700, marginBottom: 3 }}>UK Mortgage Calculator</div>
+          <div style={{ fontSize: 10, letterSpacing: "0.2em", color: "#1a8853", textTransform: "uppercase", fontWeight: 700, marginBottom: 3 }}>UK Mortgage Calculator</div>
           <div style={{ fontSize: 22, fontWeight: 700, fontFamily: "Georgia,serif", letterSpacing: "-0.02em" }}>MortgageDESK</div>
         </div>
         <div style={{ display: "flex", gap: 16, alignItems: "flex-end", flexWrap: "wrap" }}>
@@ -420,7 +420,7 @@ export default function MortgageCalc() {
                 <NumInput value={term} onChange={setTerm} placeholder="e.g. 25" suffix="yrs" min={1} max={40} />
                 {term !== "" && toNum(term) > 0 && (
                   <input type="range" min={1} max={40} value={toNum(term)} onChange={e => setTerm(e.target.value)}
-                    style={{ flex: 1, accentColor: "#1a7aff", cursor: "pointer" }} />
+                    style={{ flex: 1, accentColor: "#1a8853", cursor: "pointer" }} />
                 )}
               </div>
             </Field>
@@ -445,7 +445,7 @@ export default function MortgageCalc() {
                 <NumInput value={rate} onChange={setRate} placeholder="e.g. 4.75" suffix="%" step="0.05" />
                 {rate !== "" && toNum(rate) > 0 && (
                   <input type="range" min={0.5} max={12} step={0.05} value={toNum(rate)} onChange={e => setRate(e.target.value)}
-                    style={{ flex: 1, accentColor: "#1a7aff", cursor: "pointer" }} />
+                    style={{ flex: 1, accentColor: "#1a8853", cursor: "pointer" }} />
                 )}
               </div>
             </Field>
@@ -463,7 +463,7 @@ export default function MortgageCalc() {
             </Field>
             <div style={{ marginBottom: 14 }}>
               <label style={{ display: "flex", alignItems: "center", gap: 8, cursor: "pointer", fontSize: 12, color: "#8a9bb0" }}>
-                <input type="checkbox" checked={addFeeToLoan} onChange={e => setAddFeeToLoan(e.target.checked)} style={{ accentColor: "#1a7aff", width: 14, height: 14 }} />
+                <input type="checkbox" checked={addFeeToLoan} onChange={e => setAddFeeToLoan(e.target.checked)} style={{ accentColor: "#1a8853", width: 14, height: 14 }} />
                 Add arrangement fee to loan
               </label>
             </div>
@@ -520,12 +520,12 @@ export default function MortgageCalc() {
                 width: "100%", padding: "14px 20px", borderRadius: 8, border: "none",
                 cursor: canCalc ? "pointer" : "not-allowed",
                 background: canCalc
-                  ? (isDirty && calc !== null ? "linear-gradient(135deg, #f0a020 0%, #e08010 100%)" : "linear-gradient(135deg, #1a7aff 0%, #0055cc 100%)")
+                  ? (isDirty && calc !== null ? "linear-gradient(135deg, #f0a020 0%, #e08010 100%)" : "linear-gradient(135deg, #1a8853 0%, #136a40 100%)")
                   : "#1e3048",
                 color: canCalc ? "#fff" : "#3a5570",
                 fontSize: 14, fontWeight: 700, letterSpacing: "0.06em", textTransform: "uppercase",
                 transition: "all 0.2s", fontFamily: "inherit",
-                boxShadow: canCalc ? "0 4px 20px #1a7aff33" : "none",
+                boxShadow: canCalc ? "0 4px 20px #1a885333" : "none",
               }}
             >
               {calc === null ? "Calculate Mortgage" : isDirty ? "⟳ Recalculate" : "✓ Calculated"}
@@ -557,7 +557,7 @@ export default function MortgageCalc() {
             <>
               {/* KPI row */}
               <div style={{ display: "grid", gridTemplateColumns: kpiCols, gap: 10, marginBottom: 18 }}>
-                <StatCard label="Monthly Payment" value={fmt(monthly)} sub={monthly > 0 ? `${fmt(amort.totalCost)} total cost` : "—"} accent="#1a7aff" />
+                <StatCard label="Monthly Payment" value={fmt(monthly)} sub={monthly > 0 ? `${fmt(amort.totalCost)} total cost` : "—"} accent="#1a8853" />
                 <StatCard label="Total Interest" value={fmt(amort.totalInterest)} sub={amort.totalInterest > 0 && loan > 0 ? `${fmtPct((amort.totalInterest / loan) * 100, 1)} of loan` : "—"} />
                 <StatCard label="LTV" value={nPropValue > 0 ? fmtPct(ltv, 1) : "—"}
                   sub={ltv > 85 ? "High — limited products" : ltv > 75 ? "Moderate" : ltv > 0 ? "Strong position" : "Enter property value"}
@@ -589,7 +589,7 @@ export default function MortgageCalc() {
                     <div style={{ background: "#09141f", border: "1px solid #1e3048", borderRadius: 10, padding: 20 }}>
                       <SectionHead>Monthly Breakdown</SectionHead>
                       {[
-                        { label: "Capital Repayment", val: repaymentType === "repayment" ? Math.max(0, monthly - (loan * nRate / 100 / 12)) : 0, color: "#1a7aff" },
+                        { label: "Capital Repayment", val: repaymentType === "repayment" ? Math.max(0, monthly - (loan * nRate / 100 / 12)) : 0, color: "#1a8853" },
                         { label: "Interest", val: loan * nRate / 100 / 12, color: "#3ad68a" },
                       ].map(r => (
                         <div key={r.label} style={{ marginBottom: 12 }}>
@@ -604,7 +604,7 @@ export default function MortgageCalc() {
                       ))}
                       <div style={{ borderTop: "1px solid #1e3048", paddingTop: 10, display: "flex", justifyContent: "space-between" }}>
                         <span style={{ fontSize: 12, color: "#8a9bb0" }}>Total Monthly</span>
-                        <span style={{ fontSize: 16, fontWeight: 700, color: "#1a7aff" }}>{fmt(monthly)}</span>
+                        <span style={{ fontSize: 16, fontWeight: 700, color: "#1a8853" }}>{fmt(monthly)}</span>
                       </div>
                     </div>
 
@@ -634,7 +634,7 @@ export default function MortgageCalc() {
 
                   {/* Remortgage comparison panel */}
                   {purpose === "remortgage" && nCurrentRate > 0 && monthly > 0 && (
-                    <div style={{ background: "#09141f", border: "1px solid #1a7aff33", borderRadius: 10, padding: 20 }}>
+                    <div style={{ background: "#09141f", border: "1px solid #1a885333", borderRadius: 10, padding: 20 }}>
                       <SectionHead>Remortgage Comparison</SectionHead>
                       <div style={{ display: "grid", gridTemplateColumns: tripleCols, gap: 16, marginBottom: 16 }}>
                         {[
@@ -727,7 +727,7 @@ export default function MortgageCalc() {
                             style={{ flex: 1, height: 80, position: "relative", cursor: "default" }}>
                             <div style={{ position: "absolute", inset: 0, background: "#1e3048", borderRadius: "2px 2px 0 0" }} />
                             {nPropValue > 0 && <div style={{ position: "absolute", bottom: 0, left: 0, right: 0, background: "#3ad68a22", height: `${Math.min(100, (y.equity / nPropValue) * 100)}%`, borderRadius: "2px 2px 0 0" }} />}
-                            <div style={{ position: "absolute", bottom: 0, left: 0, right: 0, background: "#1a7aff", height: `${(y.balance / (loan || 1)) * 100}%`, borderRadius: "2px 2px 0 0", transition: "height 0.3s" }} />
+                            <div style={{ position: "absolute", bottom: 0, left: 0, right: 0, background: "#1a8853", height: `${(y.balance / (loan || 1)) * 100}%`, borderRadius: "2px 2px 0 0", transition: "height 0.3s" }} />
                             {(i === 0 || (i + 1) % Math.max(1, Math.ceil(nTerm / 8)) === 0 || i === yearlyAmort.length - 1) && (
                               <div style={{ position: "absolute", top: -16, left: "50%", transform: "translateX(-50%)", fontSize: 8, color: "#5a7a9a", whiteSpace: "nowrap" }}>Y{y.year}</div>
                             )}
@@ -735,7 +735,7 @@ export default function MortgageCalc() {
                         ))}
                       </div>
                       <div style={{ display: "flex", gap: 16 }}>
-                        <div style={{ display: "flex", alignItems: "center", gap: 5 }}><div style={{ width: 10, height: 10, background: "#1a7aff", borderRadius: 2 }} /><span style={{ fontSize: 11, color: "#5a7a9a" }}>Outstanding Balance</span></div>
+                        <div style={{ display: "flex", alignItems: "center", gap: 5 }}><div style={{ width: 10, height: 10, background: "#1a8853", borderRadius: 2 }} /><span style={{ fontSize: 11, color: "#5a7a9a" }}>Outstanding Balance</span></div>
                         <div style={{ display: "flex", alignItems: "center", gap: 5 }}><div style={{ width: 10, height: 10, background: "#3ad68a", borderRadius: 2 }} /><span style={{ fontSize: 11, color: "#5a7a9a" }}>Equity</span></div>
                       </div>
                     </div>
@@ -755,7 +755,7 @@ export default function MortgageCalc() {
                       <tbody>
                         {yearlyAmort.map(y => (
                           <tr key={y.year}>
-                            <td style={{ color: "#1a7aff", fontWeight: 600 }}>Year {y.year}</td>
+                            <td style={{ color: "#1a8853", fontWeight: 600 }}>Year {y.year}</td>
                             <td>{fmt(y.interest + y.principal)}</td>
                             <td style={{ color: "#3ad68a" }}>{fmt(y.principal)}</td>
                             <td style={{ color: "#f06060" }}>{fmt(y.interest)}</td>
@@ -817,7 +817,7 @@ export default function MortgageCalc() {
                               const isCurrent = nRate > 0 && i === 0;
                               return (
                                 <tr key={r} style={{ background: isCurrent ? "#0d1a2b" : "transparent" }}>
-                                  <td style={{ color: isCurrent ? "#1a7aff" : "#c0d0e8", fontWeight: isCurrent ? 700 : 400 }}>{fmtPct(r)}{isCurrent ? " ← current" : ""}</td>
+                                  <td style={{ color: isCurrent ? "#1a8853" : "#c0d0e8", fontWeight: isCurrent ? 700 : 400 }}>{fmtPct(r)}{isCurrent ? " ← current" : ""}</td>
                                   <td>{fmt(m)}</td>
                                   <td>{fmt(m * 12)}</td>
                                   <td style={{ color: annPct == null ? "#5a7a9a" : annPct > 45 ? "#f06060" : annPct > 35 ? "#f0a020" : "#3ad68a" }}>{annPct != null ? annPct.toFixed(1) + "%" : "—"}</td>
@@ -909,7 +909,7 @@ export default function MortgageCalc() {
                               const net = annual - annualMortgageCost - tax;
                               return (
                                 <tr key={delta} style={{ background: delta === 0 ? "#0d1a2b" : "transparent" }}>
-                                  <td style={{ fontWeight: delta === 0 ? 700 : 400, color: delta === 0 ? "#1a7aff" : "#e8f0fc" }}>{fmt(r)}{delta === 0 ? " ← current" : ""}</td>
+                                  <td style={{ fontWeight: delta === 0 ? 700 : 400, color: delta === 0 ? "#1a8853" : "#e8f0fc" }}>{fmt(r)}{delta === 0 ? " ← current" : ""}</td>
                                   <td>{fmt(annual)}</td>
                                   <td style={{ color: gy > 6 ? "#3ad68a" : gy > 4 ? "#f0a020" : "#f06060" }}>{fmtPct(gy)}</td>
                                   <td style={{ color: icr >= 1.45 ? "#3ad68a" : icr >= 1.25 ? "#f0a020" : "#f06060" }}>{icr.toFixed(2)}x</td>
@@ -977,7 +977,7 @@ export default function MortgageCalc() {
                       <Row label="Loan Amount" val={fmt(loan)} />
                       <Row label="Total Interest Paid" val={fmt(amort.totalInterest)} color="#f06060" note={nTerm > 0 ? `Over ${nTerm}-year term` : ""} />
                       <Row label="Arrangement Fee" val={nArrangementFee > 0 ? fmt(nArrangementFee) : "—"} />
-                      <Row label="Total Mortgage Cost" val={fmt(loan + amort.totalInterest + nArrangementFee)} color="#1a7aff" bold />
+                      <Row label="Total Mortgage Cost" val={fmt(loan + amort.totalInterest + nArrangementFee)} color="#1a8853" bold />
                       {purpose === "purchase" && nDeposit > 0 && (
                         <Row label="Total inc. Deposit" val={fmt(nDeposit + loan + amort.totalInterest + nArrangementFee)} />
                       )}
